@@ -1,4 +1,4 @@
-import { TitleAreaContainer } from "../../../../styles/gridCardStyled/GridCardStyled";
+import { TitleAreaContainer } from "../../../styles/gridCardStyled/GridCardStyled";
 
 const TitleArea = () => {
   const [title, summary] = ['Title', 'summarfsafsafffsfsfsafsfasfas fs afsfas  fsa fsf sf af easfawrwa4241243y'] // 백엔드에서 받아오기

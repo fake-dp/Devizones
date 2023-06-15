@@ -9,6 +9,7 @@
 
     /* Bundler mode */
     "moduleResolution": "node",
+    // "moduleResolution": "classic",
     "allowJs": true,
     "resolveJsonModule": true,
     "isolatedModules": true,

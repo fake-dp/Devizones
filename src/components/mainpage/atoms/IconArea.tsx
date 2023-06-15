@@ -1,6 +1,6 @@
 import { AiFillHeart } from 'react-icons/ai';
 import { FaComment } from 'react-icons/fa';
-import { IconAreaContainer } from '../../../../styles/gridCardStyled/GridCardStyled';
+import { IconAreaContainer } from '../../../styles/gridCardStyled/GridCardStyled';
 
 const IconArea = () => {
   const [likes, comments] = [0, 0] //백엔드에서 받아오기

@@ -1,4 +1,4 @@
-import { DateAreaContainer } from '../../../../styles/gridCardStyled/GridCardStyled';
+import { DateAreaContainer } from '../../../styles/gridCardStyled/GridCardStyled';
 
 const DateArea = () => {
 

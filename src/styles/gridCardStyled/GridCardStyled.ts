@@ -3,17 +3,17 @@ import styled from "styled-components";
 //카드 그리드 전체 레이아웃
 export const GridCardContainer = styled.div`
   display: grid;
-  //mobile 한 줄에 1개
   grid-template-columns: repeat(1, 1fr);
   margin: 30px 0 0;
   padding: 0 50px;
-  //tablet 한 줄에 3개
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin: 60px 0 0;
     padding: 0 100px;
   }
-  //1280px pc view이상 4개
+  @media (min-width: 1080px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   @media (min-width: 1280px) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -49,6 +49,7 @@ export const PortraitContainer = styled.div`
 //title, summary
 export const TitleAreaContainer = styled.div`
   color: #fff;
+  overflow: hidden;
   h3 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -96,6 +97,7 @@ export const CardInfoContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   flex: 1;
+  width: 100%;
   gap: 10px;
   align-items: center;
   height: 150px;

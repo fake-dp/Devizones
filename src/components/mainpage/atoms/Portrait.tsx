@@ -1,4 +1,4 @@
-import { PortraitContainer } from "../../../../styles/gridCardStyled/GridCardStyled";
+import { PortraitContainer } from "../../../styles/gridCardStyled/GridCardStyled";
 
 const Portrait = () => {
   const [icon, nickName] = ['', 'dummy'] //더미데이터

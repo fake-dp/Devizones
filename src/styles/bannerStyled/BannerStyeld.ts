@@ -20,25 +20,16 @@ export const BannerContainer = styled.div`
 export const LinkBtnContainer = styled.div`
   a {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 2rem;
+    width: 100%;
+    padding: 5px 10px;
     border: 1px solid #fff;
     border-radius: 1.5rem;
-    gap: 10px;
-    padding: 5px 15px;
-    transition: all 0.125s ease-in 0s;
-    :hover {
-      color: #333;
-      border-color: #333;
-      background: #fff;
-      span {
-        color: #333;
-      }
-      svg {
-        fill: #333;
-      }
-    }
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.125s ease-in 0s;
     span {
       color: #fff;
       font-size: 1rem;
@@ -47,7 +38,17 @@ export const LinkBtnContainer = styled.div`
       fill: #fff;
     }
   }
-
+  background: #333;
+  :hover {
+    border-color: #333;
+    background-color: #fff;
+    svg {
+      fill: #333;
+    }
+    span {
+      color: #333;
+    }
+  }
 `;
 
 //banner left
@@ -65,7 +66,7 @@ export const BannerLeftContanier = styled.div`
     span {
       font-size: 3rem;
     }
-    :after {
+    ::after {
       content: '';
       display: block;
       width: 20%;
@@ -98,7 +99,8 @@ export const BannerRightContainer = styled.div`
       margin: 40px 0 0;
       color: #fff;
       font-weight: bold;
-      :after {
+      content: 'sex';
+      ::after {
         content: '';
         display: block;
         width: 20%;
