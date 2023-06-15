@@ -1,4 +1,4 @@
-import { BannerLeftContanier } from "../../../../styles/bannerStyled/BannerStyeld";
+import { BannerLeftContanier } from "../../../styles/bannerStyled/BannerStyeld";
 
 const BannerLeft = () => {
   return (
