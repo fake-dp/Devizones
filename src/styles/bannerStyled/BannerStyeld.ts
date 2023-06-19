@@ -99,7 +99,6 @@ export const BannerRightContainer = styled.div`
       margin: 40px 0 0;
       color: #fff;
       font-weight: bold;
-      content: 'sex';
       ::after {
         content: '';
         display: block;

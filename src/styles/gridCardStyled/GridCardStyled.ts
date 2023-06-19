@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MainPageListType } from "../../types/MainPageType";
 
 //카드 그리드 전체 레이아웃
 export const GridCardContainer = styled.div`
@@ -22,20 +23,21 @@ export const GridCardContainer = styled.div`
 `;
 
 //프로필 이미지 영역
-export const PortraitContainer = styled.div`
+export const PortraitContainer = styled.div<MainPageListType>`
   display: flex;
   gap: 10px;
   .icon {
     width: 2rem;
     height: 2rem;
-    background: #fff;
+    background: #fff url(${props => props.profile}) center center/cover no-repeat;
     border-radius: 2rem;
   }
   .nickName {
+    display: flex;
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    :after {
+    ::after {
       content: '';
       display: block;
       width: 70%;
@@ -48,6 +50,7 @@ export const PortraitContainer = styled.div`
 
 //title, summary
 export const TitleAreaContainer = styled.div`
+  width: 100%;
   color: #fff;
   overflow: hidden;
   h3 {
@@ -107,12 +110,13 @@ export const CardInfoContainer = styled.div`
 `;
 
 //각각의 카드 container
-export const CardItemContainer = styled.div`
-  display: flex;
-  align-items: flex-end;
-  height: 330px;
-  background: #333;
-  border-radius: 2rem;
-  overflow: hidden;
-  cursor: pointer;
+export const CardItemContainer = styled.div<MainPageListType>`
+  a {
+    display: flex;
+    align-items: flex-end;
+    height: 330px;
+    background: #333 url(${props => props.thumbnail? props.thumbnail : '#333'}) center center/cover;
+    border-radius: 2rem;
+    overflow: hidden;
+  }
 `;
