@@ -12,7 +12,7 @@ export const BannerContainer = styled.div`
   }
   box-sizing: border-box;
   border-radius: 2rem;
-  background: #333;
+  background: url(../img/banner.jpg) center center/cover;
   height: 300px;
 `;
 
@@ -21,8 +21,8 @@ export const LinkBtnContainer = styled.div`
   a {
     display: flex;
     height: 2rem;
-    width: 100%;
-    padding: 5px 10px;
+    padding: 18px 15px;
+    box-sizing: border-box;
     border: 1px solid #fff;
     border-radius: 1.5rem;
     cursor: pointer;
@@ -38,10 +38,10 @@ export const LinkBtnContainer = styled.div`
       fill: #fff;
     }
   }
-  background: #333;
+  background: rgba(33,33,33,0);
   :hover {
     border-color: #333;
-    background-color: #fff;
+    background: rgba(255,255,255,100);
     svg {
       fill: #333;
     }

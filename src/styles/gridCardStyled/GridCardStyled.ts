@@ -26,6 +26,7 @@ export const GridCardContainer = styled.div`
 export const PortraitContainer = styled.div<MainPageListType>`
   display: flex;
   gap: 10px;
+  margin: auto 0 0;
   .icon {
     width: 2rem;
     height: 2rem;
@@ -50,9 +51,14 @@ export const PortraitContainer = styled.div<MainPageListType>`
 
 //title, summary
 export const TitleAreaContainer = styled.div`
+  flex: 1;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   color: #fff;
   overflow: hidden;
+  margin: 0 0 auto;
   h3 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -73,10 +79,10 @@ export const TitleAreaContainer = styled.div`
   }
 `;
 
-//likes, comments
+//likes, comments, date
 export const IconAreaContainer = styled.div`
   display: flex;
-  width: 50%;
+  width: 100%;
   gap: 10px;
   span {
     color: #fff;
@@ -84,27 +90,23 @@ export const IconAreaContainer = styled.div`
   svg {
     fill: #fff;
   }
-`;
-
-//date
-export const DateAreaContainer = styled.p`
-  width: calc(50% - 10px);
-  text-align: end;
-  font-size: 0.8rem;
-  color: #fff;
+  p {
+    flex: 1;
+    text-align: end;
+    font-size: 0.8rem;
+    color: #fff;
+  }
 `;
 
 //카드 반투명 info창
-export const CardInfoContainer = styled.div`
+export const CardInfoContainer = styled.div<MainPageListType>`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   flex: 1;
   width: 100%;
+  height: ${props => props.thumbnail ? '45%' : '100%'};
   gap: 10px;
-  align-items: center;
-  height: 150px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   box-sizing: border-box;
   background: rgba(0,0,0,60%);
 `;
@@ -115,8 +117,9 @@ export const CardItemContainer = styled.div<MainPageListType>`
     display: flex;
     align-items: flex-end;
     height: 330px;
-    background: #333 url(${props => props.thumbnail? props.thumbnail : '#333'}) center center/cover;
     border-radius: 2rem;
     overflow: hidden;
+    background: #fff url(${props => props.thumbnail ? props.thumbnail : null}) center center/cover;
+
   }
 `;
