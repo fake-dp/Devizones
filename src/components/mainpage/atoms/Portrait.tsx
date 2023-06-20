@@ -1,12 +1,11 @@
 import { PortraitContainer } from "../../../styles/gridCardStyled/GridCardStyled";
+import { MainPageListType } from "../../../types/MainPageType";
 
-const Portrait = () => {
-  const [icon, nickName] = ['', 'dummy'] //더미데이터
-
+const Portrait = (props: MainPageListType) => {
   return (
-    <PortraitContainer>
-      <div className="icon">{icon}</div>
-      <span className="nickName">{nickName}</span>
+    <PortraitContainer profile={props.profile}>
+      <div className="icon"></div>
+      <p className="nickName">{props.nickname}</p>
     </PortraitContainer>
   )
 };

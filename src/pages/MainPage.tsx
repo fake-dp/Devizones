@@ -1,7 +1,7 @@
 import Banner from "../components/mainpage/templates/Banner";
 import GridCard from "../components/mainpage/templates/GridCard";
 import { useEffect } from "react";
-import mainApi from "../api/mainApi";
+import mainApi from "../api/MainApi";
 import { useRecoilState } from "recoil";
 import { mainList } from "../recoil/atom";
 

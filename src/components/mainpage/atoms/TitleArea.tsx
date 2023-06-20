@@ -1,12 +1,11 @@
 import { TitleAreaContainer } from "../../../styles/gridCardStyled/GridCardStyled";
+import { MainPageListType } from '../../../types/MainPageType';
 
-const TitleArea = () => {
-  const [title, summary] = ['Title', 'summarfsafsafffsfsfsafsfasfas fs afsfas  fsa fsf sf af easfawrwa4241243y'] // 백엔드에서 받아오기
-
+const TitleArea = (props: MainPageListType) => {
   return (
     <TitleAreaContainer>
-      <h3>{title}</h3>
-      <p>{summary}</p>
+      <h3>{props.title}</h3>
+      <p>{props.summary}</p>
     </TitleAreaContainer>
   )
 };

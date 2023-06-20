@@ -1,15 +1,15 @@
 import CardItem from "../organisms/CardItem";
 import { GridCardContainer } from "../../../styles/gridCardStyled/GridCardStyled";
+import { useRecoilValue } from "recoil";
+import { mainList } from "../../../recoil/atom";
 
 const GridCard = () => {
-  const dummy = new Array(14).fill('')
+  const postList = useRecoilValue(mainList);
   
   return (
     <>
       <GridCardContainer>
-      {dummy?.map((card, i) => (
-        <CardItem key={i}/>
-      ))}
+      {postList?.map(card => <CardItem key={card.postId} {...card}/>)}
     </GridCardContainer>
     </>
   )
