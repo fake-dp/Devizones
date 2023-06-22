@@ -7,11 +7,9 @@ const GridCard = () => {
   const postList = useRecoilValue(mainList);
   
   return (
-    <>
-      <GridCardContainer>
+    <GridCardContainer>
       {postList?.map(card => <CardItem key={card.postId} {...card}/>)}
     </GridCardContainer>
-    </>
   )
 };
 

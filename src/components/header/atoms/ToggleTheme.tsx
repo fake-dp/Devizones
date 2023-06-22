@@ -1,6 +1,6 @@
 import { ThemeIconWrapper } from "../../../styles/headerStyled/HeaderStyled";
 import { useRecoilState } from 'recoil';
-import { themeState } from "../../../recoil/themeState";
+import { themeState } from "../../../recoil/atom";
 import { StyledSun, StyledMoon } from "../../../styles/headerStyled/HeaderStyled";
 
 const ToggleTheme = () => {
