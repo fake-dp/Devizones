@@ -1,4 +1,4 @@
-import { PortraitContainer } from "../../../styles/gridCardStyled/GridCardStyled";
+import { PortraitContainer } from "../../../styles/mainPageStyeld/GridCardStyled";
 import { MainPageListType } from "../../../types/MainPageType";
 
 const Portrait = (props: MainPageListType) => {

@@ -1,5 +1,5 @@
 import { HiArrowLongRight } from "react-icons/hi2"
-import { LinkBtnContainer } from "../../../styles/bannerStyled/BannerStyeld";
+import { LinkBtnContainer } from "../../../styles/mainPageStyeld/BannerStyeld";
 import { Link } from "react-router-dom";
 
 const LinkBtn = () => {

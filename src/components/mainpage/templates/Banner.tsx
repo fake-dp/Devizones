@@ -1,6 +1,6 @@
 import BannerLeft from "../organisms/BannerLeft"
 import BannerRight from "../organisms/BannerRight"
-import { BannerContainer } from "../../../styles/bannerStyled/BannerStyeld"
+import { BannerContainer } from "../../../styles/mainPageStyeld/BannerStyeld"
 
 const Banner = () => {
   return (

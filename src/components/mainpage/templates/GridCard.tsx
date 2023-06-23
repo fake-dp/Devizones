@@ -1,5 +1,5 @@
 import CardItem from "../organisms/CardItem";
-import { GridCardContainer } from "../../../styles/gridCardStyled/GridCardStyled";
+import { GridCardContainer } from "../../../styles/mainPageStyeld/GridCardStyled";
 import { useRecoilValue } from "recoil";
 import { mainList } from "../../../recoil/atom";
 

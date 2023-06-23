@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import mainApi from "../api/MainApi";
 import { useRecoilState } from "recoil";
 import { mainList } from "../recoil/atom";
+import ScrollTop from "../components/mainpage/templates/ScrollTop";
 
 const MainPage = () => {
 
@@ -21,12 +22,13 @@ const MainPage = () => {
 
       //불러올 데이터가 더 이상 없을 경우 무한스크롤링 종료
       if(nextCursor.key === -1){
-        setLimit(true)
+        setLimit(true);
       }else{
         setPostList([...postList, ...items]);
         setCursor(nextCursor.key);
-        setIsLoading(false);
       }
+      setIsLoading(false);
+
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -57,6 +59,7 @@ const MainPage = () => {
     <>
       <Banner />
       <GridCard />
+      <ScrollTop />
       <div ref={observerTarget}></div>
     </>
   );
