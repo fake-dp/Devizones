@@ -11,3 +11,11 @@ export interface MainPageListType {
   thumbnail?: string | null;
   like?: number;
 }
+
+//mainApi body 타입
+export interface MainPageType {
+  items: MainPageListType[];
+  nextCursor: {
+    key: number;
+  }
+}

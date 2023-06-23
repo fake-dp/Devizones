@@ -1,6 +1,6 @@
 import { AiFillHeart } from 'react-icons/ai';
 import { FaComment } from 'react-icons/fa';
-import { IconAreaContainer } from '../../../styles/gridCardStyled/GridCardStyled';
+import { IconAreaContainer } from '../../../styles/mainPageStyeld/GridCardStyled';
 import { MainPageListType } from '../../../types/MainPageType';
 
 const IconArea = (props: MainPageListType) => {
