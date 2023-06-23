@@ -1,4 +1,4 @@
-import { BannerRightContainer } from "../../../styles/bannerStyled/BannerStyeld";
+import { BannerRightContainer } from "../../../styles/mainPageStyeld/BannerStyeld";
 import LinkBtn from "../atoms/LinkBtn";
 
 const BannerRight = () => {

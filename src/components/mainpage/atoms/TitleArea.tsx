@@ -1,4 +1,4 @@
-import { TitleAreaContainer } from "../../../styles/gridCardStyled/GridCardStyled";
+import { TitleAreaContainer } from "../../../styles/mainPageStyeld/GridCardStyled";
 import { MainPageListType } from '../../../types/MainPageType';
 
 const TitleArea = (props: MainPageListType) => {

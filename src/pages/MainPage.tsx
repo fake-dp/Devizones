@@ -1,37 +1,66 @@
 import Banner from "../components/mainpage/templates/Banner";
 import GridCard from "../components/mainpage/templates/GridCard";
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import mainApi from "../api/MainApi";
 import { useRecoilState } from "recoil";
 import { mainList } from "../recoil/atom";
+import ScrollTop from "../components/mainpage/templates/ScrollTop";
 
 const MainPage = () => {
-  // 아톰을 사용하여 상태관리를 하고 있습니다.
-  // 아톰을 사용하면 상태관리를 하기 위해 리덕스를 사용할 때 처럼
-  // 액션, 리듀서, 디스패치를 사용하지 않아도 됩니다.
-  const [postList, setPostList] = useRecoilState(mainList);
 
-  // useEffect를 사용하여 컴포넌트가 마운트 되었을 때
-  // getApi 함수를 실행하여 데이터를 받아오고 있습니다.
-  useEffect(() => {
-    getApi();
-  }, []);
+  const [ isLoading, setIsLoading ] = useState(false);
+  const [ cursor, setCursor ]  = useState(-1);
+  const [ limit, setLimit ] = useState(false); // 데이터를 모두 불러왔는지 관리
+  const [ postList, setPostList ] = useRecoilState(mainList);
+  const observerTarget = useRef<HTMLDivElement>(null); //감시 타겟 ref
 
-  // getApi 함수를 실행하여 아톰에 데이터를 저장하고 있습니다.
-  const getApi = async () => {
-    const data = await mainApi.getMainList();
-    setPostList(data);
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const data = await mainApi.getMainList(cursor);
+      const { items, nextCursor } = data;
+
+      //불러올 데이터가 더 이상 없을 경우 무한스크롤링 종료
+      if(nextCursor.key === -1){
+        setLimit(true);
+      }else{
+        setPostList([...postList, ...items]);
+        setCursor(nextCursor.key);
+      }
+      setIsLoading(false);
+
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    };
   };
 
-  // 콘솔창을 확인해보면 아톰에 데이터가 저장되어 있는 것을 확인할 수 있습니다.
-  console.log("atom", postList);
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+         //타겟이 뷰포트와 교차할 경우 api 호출
+        if(entry.isIntersecting && !isLoading) fetchData();
+      });
+    }, {threshold: 0.1});//타겟이 0.1만큼 뷰포트에 들어올 경우 실행
 
-  // useRecoilValue를 활용해서 메인 컴포넌트에 한번 뿌려보세요 !
+    //타겟 감시 시작
+    if(observerTarget.current) observer.observe(observerTarget.current);
+
+    //불러올 데이터가 더 이상 없을 경우 무한스크롤링 종료
+    if(limit) observer.disconnect();
+
+    return () => {
+      //메인 컴포넌트가 언마운트 될 경우 무한스크롤링 종료
+      if(observerTarget.current) observer.disconnect();
+    }
+  }, [isLoading, fetchData]);
 
   return (
     <>
       <Banner />
       <GridCard />
+      <ScrollTop />
+      <div ref={observerTarget}></div>
     </>
   );
 };
