@@ -8,7 +8,7 @@ const GridCard = () => {
   
   return (
     <GridCardContainer>
-      {postList?.map(card => <CardItem key={card.postId} {...card}/>)}
+      {postList?.map((card, i) => <CardItem key={i} {...card}/>)}
     </GridCardContainer>
   )
 };
