@@ -1,18 +1,21 @@
 import { createGlobalStyle } from "styled-components";
-import Reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
   /* reset */
-  ${Reset}
+  * {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+  }
 
   /* 한글 폰트 */
-  @font-face {
+  /* @font-face {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 400;
     src: local('Noto Sans KR'), local('NotoSansKR-Regular'), url(https://fonts.gstatic.com/s/notosanskr/v12/PbykFmXiEBPT4ITbgNA5CgmOsn7u.woff2) format('woff2');
     unicode-range: U+AC00-D7AF;
-  }
+  } */
 
   /* 영문 폰트 */
   @font-face {
