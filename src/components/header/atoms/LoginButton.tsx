@@ -1,4 +1,4 @@
-import { LoginButtonWrapper } from "../../../styles/headerStyled/HeaderStyled";
+import { ButtonWrapper } from "../../../styles/headerStyled/HeaderStyled";
 
 type LoginButtonProps = {
   openModal: () => void;
@@ -6,9 +6,9 @@ type LoginButtonProps = {
 
 const LoginButton = ({ openModal }: LoginButtonProps) => {
   return (
-    <LoginButtonWrapper>
+    <ButtonWrapper>
       <button onClick={openModal}>LOGIN</button>
-    </LoginButtonWrapper>
+    </ButtonWrapper>
   );
 };
 

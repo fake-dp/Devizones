@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  /* reset */
   * {
     margin: 0;
     padding: 0;
@@ -31,6 +30,10 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.background};
   }
 
+  ul, ol {
+    list-style: none;
+  }
+  
   a {
     text-decoration: none;
   }

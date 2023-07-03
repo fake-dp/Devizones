@@ -13,7 +13,7 @@ const AppRouter = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<MainPage />} />
-        <Route path="/detail" element={<DetailPage />} />
+        <Route path="/detail/:postId" element={<DetailPage />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/setting" element={<SettingPage />} />
         <Route path="/search" element={<SearchPage />} />
