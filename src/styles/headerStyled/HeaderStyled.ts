@@ -21,15 +21,18 @@ export const HeaderRight = styled.div`
 `;
 
 // 헤더 로그인 버튼
-export const LoginButtonWrapper = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  > button {
+  > button, > a {
     height: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 1rem;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
     border-radius: 1rem;
     outline: none;
     word-break: keep-all;
@@ -253,3 +256,45 @@ export const ModalCloseBtn = styled.button`
     color: white;
   }
 `;
+
+export const ProfileIconContanier = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  cursor: pointer;
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    /* background: #fff url(${props => props.profile}) center center/cover no-repeat; */
+    background: #f00;
+    border-radius: 2rem;
+  }
+`
+
+export const ProfileDropdownContainer = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: ${props => props.theme.back_sub};
+  color: ${props => props.theme.font};
+  width: 120px;
+  bottom: -20px;
+  left: -40px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  a, div {
+    padding: 20px 20px;
+    box-sizing: border-box;
+    display: block;
+    color: ${props => props.theme.back_reverse};
+    background: ${props => props.theme.back_sub};
+    &:hover {
+      background: ${props => props.theme.back_reverse};
+      color: ${props => props.theme.background};
+    }
+  }
+
+`

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const CardItem = (props: MainPageListType) => {
   return (
     <CardItemContainer thumbnail={props.thumbnail}>
-      <Link to=''>
+      <Link to={`/detail/${props?.postId}`}>
         <CardInfoContainer thumbnail={props.thumbnail}>
           <TitleArea {...props}/>
           <IconArea {...props}/>
